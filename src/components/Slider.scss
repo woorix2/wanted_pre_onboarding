@@ -1,0 +1,31 @@
+.Slider {
+    width: 300px;
+    margin: 50px auto;
+}
+
+.inputNum {
+    text-align: right;
+}
+.range-bar {
+    width: 100%;
+}
+
+.range-labels {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+
+    li {
+        float: left;
+        cursor: pointer;
+        background-color: #ccc;
+        border-radius: 10px;
+        width: 40px;
+    }
+    li:active {
+        
+        background-color: paleturquoise;
+        
+    }
+}
