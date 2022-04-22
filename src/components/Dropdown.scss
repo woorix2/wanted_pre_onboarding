@@ -1,0 +1,66 @@
+.DropBox {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .input-area {
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        cursor: pointer;
+
+        input {
+            width: 200px;
+            height: 30px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            padding-left: 10px;
+        }
+
+        .triangle {
+            padding-right: 10px;
+        }
+    }
+
+    .dropList {
+        padding-left: 0;
+        padding-top: 0;
+        margin: 0;
+        width: 200px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+
+        input{
+            width: 200px;
+            border: none;
+            outline: none;
+            background-color: whitesmoke;
+            padding-left: 10px;
+        }
+
+        li {
+            list-style: none;
+            text-align: left;
+            padding: 5px 10px;
+            background-color: whitesmoke;
+            cursor: pointer;
+            font-size: 13px;
+        }
+    }
+
+    .hide {
+        display: none;
+    }
+}

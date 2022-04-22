@@ -1,0 +1,48 @@
+
+.login-area {
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .area {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            width: 250px;
+            text-align: left;
+        }
+
+        .text-area {
+            width: 250px;
+            border: 2px solid #ccc;
+
+            input {
+                width: 200px;
+                height: 30px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+            .chkBox-on {
+                background-color: aquamarine;
+            }
+        }
+
+        .email-des{
+            color: red;
+            margin: 0;
+            width: 250px;
+            text-align: left;
+            font-size: 11px;
+        }
+    }
+}
