@@ -1,5 +1,5 @@
 import './Input.scss';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MdOutlineCheckCircleOutline } from 'react-icons/md';
 import { FaEye } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ const Input = () => {
     const [emailValue, setEmailValue] = useState('');
     const [emailState, setEmailState] = useState('');
 
-    const onClick = () => {
+    const eyeClicked = () => {
         setPasswordState( () => {
             if(!passwordState.visible) return {type: 'text', visible: true}
            else return{ type: 'password', visible: false }
@@ -19,14 +19,11 @@ const Input = () => {
     }
     let validEmail =/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
     
-    const onBlur = (e) => {
+    const getEmailValue = (e) => {
         setEmailValue(e.target.value);
-        console.log(emailValue);
     }
     useEffect(() => {
-        console.log(emailValue);
         setEmailState(validEmail.test(emailValue));
-        console.log(emailState);
     }, [emailValue])
 
     return (
@@ -36,7 +33,7 @@ const Input = () => {
                 <div className='area'>
                     <label htmlFor="email" className='basic' >E-mail</label>
                     <div className='text-area'>
-                        <input type='text' id='email' placeholder='E-mail' onBlur={onBlur} />
+                        <input type='text' id='email' placeholder='E-mail' onBlur={getEmailValue} />
                         <span><MdOutlineCheckCircleOutline className={emailState === false ? '' : 'chkBox-on'} /></span>
                     </div>
                     {emailState === false && emailValue ? <p className='email-des'>Invalid Email address</p> : ''}
@@ -45,7 +42,7 @@ const Input = () => {
                     <label htmlFor="password" className='basic' >password</label>
                     <div className='text-area'>
                         <input type={passwordState.type} id='password' placeholder='Password'/>
-                        <span><FaEye onClick={onClick} /></span>
+                        <span><FaEye onClick={eyeClicked} className='eye' /></span>
                     </div>
                 </div>
             </div>

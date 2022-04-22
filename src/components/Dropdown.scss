@@ -9,11 +9,9 @@
 
     .input-area {
         width: 200px;
-        margin: 0 auto;
         margin-top: 10px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: whitesmoke;
@@ -36,15 +34,15 @@
 
     .dropList {
         padding-left: 0;
-        padding-top: 0;
         margin: 0;
-        width: 200px;
         border: 2px solid #ccc;
         border-radius: 5px;
 
         input{
             width: 200px;
+            height: 35px;
             border: none;
+            border-bottom: 1px solid #ccc;
             outline: none;
             background-color: whitesmoke;
             padding-left: 10px;

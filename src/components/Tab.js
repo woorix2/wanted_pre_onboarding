@@ -4,21 +4,18 @@ import styled from "styled-components";
 
 const Tab = () => {
     const underlineRef = useRef();
-    console.log(underlineRef)
     
     const [width, setWidth] = useState(0);
     const [left, setLeft] = useState(0);
     const [top, setTop] = useState(0);
     const [id, setId] = useState('');
 
-    const onClick = (e) => {
-        console.log(e.target.id);
+    const getTab = (e) => {
         setWidth(e.target.offsetWidth);
         setLeft(e.target.offsetLeft);
         setTop(underlineRef.current.offsetHeight);
         setId(e.target.id);
     }
-    console.log(top, width, left);
     
     const DivUnderline = styled.div`
         width: ${width}px;
@@ -34,9 +31,9 @@ const Tab = () => {
             <h2>Tab</h2>
             <div className='Tab'>
                 <div ref={underlineRef} className='Tab-list'>
-                    <a id='1' onClick={onClick} href='#!' className={id==='1' ? 'Tab-bar-Clicked' : 'Tab-bar'}>감자</a>
-                    <a id='2' onClick={onClick} href='#!' className={id==='2' ? 'Tab-bar-Clicked' : 'Tab-bar'}>고구마</a>
-                    <a id='3' onClick={onClick} href='#!' className={id==='3' ? 'Tab-bar-Clicked' : 'Tab-bar'}>카레라이스</a>
+                    <a id='1' onClick={getTab} href='#!' className={id==='1' ? 'Tab-bar-Clicked' : 'Tab-bar'}>감자</a>
+                    <a id='2' onClick={getTab} href='#!' className={id==='2' ? 'Tab-bar-Clicked' : 'Tab-bar'}>고구마</a>
+                    <a id='3' onClick={getTab} href='#!' className={id==='3' ? 'Tab-bar-Clicked' : 'Tab-bar'}>카레라이스</a>
                 </div>
                 <DivUnderline />
             </div>

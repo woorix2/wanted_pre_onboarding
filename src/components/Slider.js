@@ -1,12 +1,12 @@
 import './Slider.scss';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const Slider = () => {
     const [value, setValue] = useState(0);
-    const onChange = (e) => {
+    const getInputValue = (e) => {
         setValue(e.target.value);
     }
-    const onClick = (e) => {
+    const getPercent = (e) => {
         setValue(e.target.id);
     }
 
@@ -18,7 +18,7 @@ const Slider = () => {
                 <br />
                 <input 
                 value={value}
-                onChange={onChange} 
+                onChange={getInputValue} 
                 type='range' 
                 className='range-bar' 
                 name='range-bar' 
@@ -26,11 +26,11 @@ const Slider = () => {
                 max='100' 
                 step='1' />
                 <ul className="range-labels">
-                    <li id='1' onClick={onClick}>1%</li>
-                    <li id='25' onClick={onClick}>25%</li>
-                    <li id='50' onClick={onClick}>50%</li>
-                    <li id='75' onClick={onClick}>75%</li>
-                    <li id='100' onClick={onClick}>100%</li>
+                    <li id='1' onClick={getPercent}>1%</li>
+                    <li id='25' onClick={getPercent}>25%</li>
+                    <li id='50' onClick={getPercent}>50%</li>
+                    <li id='75' onClick={getPercent}>75%</li>
+                    <li id='100' onClick={getPercent}>100%</li>
                 </ul>
             </div>
         </div>

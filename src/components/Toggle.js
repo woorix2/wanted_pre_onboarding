@@ -5,8 +5,7 @@ import styled, { keyframes } from "styled-components";
 const Toggle = () => {
     
     const [value, setValue] = useState("basic");
-    const onClick =(e) => {
-        console.log(e.target.htmlFor)
+    const getLabelValue= (e) => {
         setValue(e.target.htmlFor);
     }
     const move = keyframes`
@@ -25,7 +24,7 @@ const Toggle = () => {
         top: 2px;
         left: 2px;
         background-color: #fff;
-        animation: ${move} 0.5s ease-in-out;
+        animation: ${move} 0.3s ease-in-out;
         animation-fill-mode: forwards;
         animation-direction: ${value === 'basic' ? 'reverse' : 'normal'};
     `
@@ -35,10 +34,10 @@ const Toggle = () => {
             <h2>Toggle</h2>
             <div className='Toggle' >
                 <input type='checkbox' id='basic' value='basic'/>
-                <label htmlFor="basic" className='basic' onClick={onClick}>기본</label>
+                <label htmlFor="basic" className='basic' onClick={getLabelValue}>기본</label>
                 <DivBall  />
                 <input type='checkbox' id='detail' value='detail' />
-                <label htmlFor="detail" className='detail' onClick={onClick} >상세</label>
+                <label htmlFor="detail" className='detail' onClick={getLabelValue} >상세</label>
             </div>
         </div>
         

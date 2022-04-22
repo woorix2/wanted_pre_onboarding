@@ -10,6 +10,7 @@ const Dropdown = () => {
 
     const getListValue = (e) => {
         setInputvalue(e.target.outerText);
+        setIsClicked(!isClicked);
     }
 
     const getSearchValue = (e) => {
